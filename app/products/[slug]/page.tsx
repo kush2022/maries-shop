@@ -4,6 +4,7 @@ import { getProduct, products } from "@/data/products";
 import Benefits from "@/components/Benefits";
 import HowToUse from "@/components/HowToUse";
 import WhatsAppOrderButton from "@/components/WhatsAppOrderButton";
+import ShareButtons from "@/components/ShareButtons";
 import ProductGallery from "@/components/ProductGallery";
 import Reveal from "@/components/Reveal";
 
@@ -65,6 +66,7 @@ export default async function ProductPage({
           </div>
 
           <WhatsAppOrderButton product={product} className="mt-6" />
+          <ShareButtons product={product} className="mt-3" />
 
           <div className="divider-rose my-8" />
           <Benefits items={product.benefits} />
