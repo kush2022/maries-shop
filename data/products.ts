@@ -221,13 +221,58 @@ export const products: Product[] = [
       "Leaves Skin Soft & Radiant",
     ],
     howToUse: [
-      { title: "Application", detail: "Apply a small amount to damp skin and scrub in gentle, circular motions." },
-      { title: "Rinse", detail: "Rinse completely with warm water and follow up with your favorite moisturizer." },
+      {
+        title: "Application",
+        detail:
+          "Apply a small amount to damp skin and scrub in gentle, circular motions.",
+      },
+      {
+        title: "Rinse",
+        detail:
+          "Rinse completely with warm water and follow up with your favorite moisturizer.",
+      },
       { title: "Storage", detail: "Keep tightly sealed in a cool, dry place." },
     ],
-    ingredients: "Avocado Fruit Extract, Nourishing Botanical Oils, and Natural Exfoliating Grains.",
+    ingredients:
+      "Avocado Fruit Extract, Nourishing Botanical Oils, and Natural Exfoliating Grains.",
     skinTypes: "For all skin types",
-}
+  },
+
+  {
+    slug: "strawberry-scrub",
+    name: "Maries Strawberry Scrubs",
+    tagline: "Smooth • Refresh • Glow",
+    category: "Skin Care",
+    price: "KES 800", // Adjust according to your catalog pricing
+    compareAtPrice: "KES 1,199",
+    image: "/products/strawberry-scrub-1.jpeg",
+    images: [
+      "/products/strawberry-scrub-1.jpeg",
+      "/products/strawberry-scrub-2.jpeg",
+    ],
+    short:
+      "An exfoliating facial and body scrub made with love to refresh your skin and reveal your natural glow.",
+    benefits: [
+      "Gently Exfoliates",
+      "Nourishes & Moisturizes",
+      "Leaves Skin Soft & Glowing",
+    ],
+    howToUse: [
+      {
+        title: "Application",
+        detail:
+          "Apply a small amount to moist skin and massage gently in circular motions.",
+      },
+      {
+        title: "Rinse",
+        detail: "Rinse off thoroughly with water and pat dry.",
+      },
+      { title: "Warning", detail: "For external use only." },
+    ],
+    ingredients:
+      "Strawberry Fruit Extract, Natural Exfoliating Agents, and Hydrating Botanicals.",
+    skinTypes: "For All Skin Types",
+  },
 ];
 
 export function getProduct(slug: string) {

@@ -25,6 +25,16 @@ export default function Footer() {
             <p className="mt-1 font-sans text-sm text-ink-soft">
               Message us on WhatsApp to order or ask a question.
             </p>
+            {siteConfig.instagram && (
+            <a
+              href={`https://instagram.com/${siteConfig.instagram}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-block font-sans text-sm font-semibold text-rose-deep transition hover:text-moss"
+            >
+              @{siteConfig.instagram}
+            </a>
+          )}
           </div>
 
           <div>

@@ -4,7 +4,7 @@ export const siteConfig = {
   // Edit this if the number changes — used to build WhatsApp order links
   phoneDisplay: "0741 599 691",
   phoneWhatsApp: "254741599691", // international format, no leading 0 or +
-  instagram: "", // optional — add handle to show in footer
+  instagram: "maries_skincare_products", // optional — add handle to show in footer
   storageNote: "Store in a cool, dry place away from direct sunlight.",
 };
 
