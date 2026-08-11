@@ -82,8 +82,8 @@ export const products: Product[] = [
     name: "Marie's Qusil Powder",
     tagline: "Purifying Facial Mask",
     category: "Mask",
-    price: "KES 1,200",
-    compareAtPrice: "KES 1,500",
+    price: "KES 1,000",
+    compareAtPrice: "KES 1,299",
     image: "/products/qusil-powder-1.jpeg",
     images: ["/products/qusil-powder-1.jpeg", "/products/qusil-powder-2.jpeg"],
     short:
@@ -104,7 +104,7 @@ export const products: Product[] = [
         detail: "Rinse with warm water and follow with rose water toner.",
       },
     ],
-    ingredients: "PLACEHOLDER — list your real ingredients here.",
+    ingredients: "",
     skinTypes: "For normal to oily skin",
   },
   {
@@ -112,8 +112,8 @@ export const products: Product[] = [
     name: "Marie's Benoit Black Clay Mask",
     tagline: "Purify, Refresh, Reveal Your Natural Glow",
     category: "Skin Care",
-    price: "KES 1,500",
-    compareAtPrice: "KES 1,800",
+    price: "KES 1,000",
+    compareAtPrice: "KES 1,399",
     image: "/products/black-clay-1.jpeg",
     images: ["/products/black-clay-1.jpeg", "/products/black-clay-2.jpeg"],
     short:
@@ -141,6 +141,93 @@ export const products: Product[] = [
       "Pure Black Clay, 100% Natural Minerals and Botanical Extracts.",
     skinTypes: "For all skin types",
   },
+  {
+    slug: "charcoal-scrub",
+    name: "Maries Charcoal Scrubs",
+    tagline: "Detoxify • Exfoliate • Exfoliate • Refresh",
+    category: "Skin Care",
+    price: "KES 800", // Kept consistent with previous items, adjust as needed
+    compareAtPrice: "KES 1,249",
+    image: "/products/charcoal-scrub-1.jpeg",
+    images: ["/products/charcoal-scrub-1.jpeg"],
+    short:
+      "A deep-cleansing facial and body scrub made with love to thoroughly exfoliate, purify, and refresh the skin.",
+    benefits: [
+      "Detoxifies and pulls out deep impurities",
+      "Provides intense exfoliation to remove dead cells",
+      "Refreshes and clears the skin texture",
+    ],
+    howToUse: [
+      {
+        title: "Application",
+        detail:
+          "Apply a small amount to damp skin and massage gently in circular motions.",
+      },
+      { title: "Rinse", detail: "Wash off thoroughly with water and pat dry." },
+      {
+        title: "Storage",
+        detail: "Store in a cool, dry place away from direct sunlight.",
+      },
+    ],
+    ingredients:
+      "Activated Charcoal, Exfoliating Minerals, and Natural Botanicals.",
+    skinTypes: "For all skin types",
+  },
+  {
+    slug: "vitamin-c-scrub",
+    name: "Maries Vitamin C Scrubs",
+    tagline: "Reveal Your Natural Glow",
+    category: "Skin Care",
+    price: "KES 800", // Adjust according to your catalog pricing
+    compareAtPrice: "KES 1,199",
+    image: "/products/vitamin-c-scrub-1.jpeg",
+    images: ["/products/vitamin-c-scrub-1.jpeg"],
+    short:
+      "A brightening and smoothing facial and body scrub made with love to revitalize skin texture and enhance radiance.",
+    benefits: [
+      "Brightens & Revitalizes Skin",
+      "Gently Exfoliates & Smooths",
+      "Helps Improve Skin Texture",
+    ],
+    howToUse: [
+      {
+        title: "Application",
+        detail: "Massage gently onto damp skin using circular motions.",
+      },
+      {
+        title: "Rinse",
+        detail: "Rinse off thoroughly with warm water and pat dry.",
+      },
+      { title: "Warning", detail: "For External Use Only." },
+    ],
+    ingredients:
+      "Vitamin C Extract, Natural Exfoliating Grains, and Citrus Essential Oils.",
+    skinTypes: "For all skin types",
+  },
+  {
+    slug: "avocado-scrub",
+    name: "Maries Avocado Scrubs",
+    tagline: "Naturally Nourish • Smooth • Glow",
+    category: "Skin Care",
+    price: "KES 800", // Adjust according to your catalog pricing
+    compareAtPrice: "KES 1,199",
+    image: "/products/avocado-scrub-1.jpeg",
+    images: ["/products/avocado-scrub-1.jpeg"],
+    short:
+      "A rich, exfoliating body and facial scrub made with love to deeply nourish and soften skin texture naturally.",
+    benefits: [
+      "Gently Exfoliates",
+      "Nourishes & Moisturizes",
+      "Leaves Skin Soft & Radiant",
+    ],
+    howToUse: [
+      { title: "Application", detail: "Apply a small amount to damp skin and scrub in gentle, circular motions." },
+      { title: "Rinse", detail: "Rinse completely with warm water and follow up with your favorite moisturizer." },
+      { title: "Storage", detail: "Keep tightly sealed in a cool, dry place." },
+    ],
+    ingredients: "Avocado Fruit Extract, Nourishing Botanical Oils, and Natural Exfoliating Grains.",
+    skinTypes: "For all skin types",
+}
 ];
 
 export function getProduct(slug: string) {
