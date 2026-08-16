@@ -273,6 +273,318 @@ export const products: Product[] = [
       "Strawberry Fruit Extract, Natural Exfoliating Agents, and Hydrating Botanicals.",
     skinTypes: "For All Skin Types",
   },
+  {
+    slug: "sadoer-collagen-facial-mask",
+    name: "Sadoer Collagen Anti-Aging Facial Mask",
+    tagline: "Pure Natural Active Collagen • Collagen Firming Series",
+    category: "Skin Care",
+    price: "KES 200",
+    compareAtPrice: "KES 300", // Standard retail markup placeholder, adjust as needed
+    image: "/products/Collagen_facial_masks_flat_lay_1.jpeg",
+    images: [
+      "/products/Collagen_facial_masks_flat_lay_1.jpeg",
+      "/products/Collagen_facial_masks_flat_lay_2.jpeg",
+    ],
+    short:
+      "An anti-aging sheet mask featuring Active Protein Technology and 10 times collagen content to replenish, firm, and repair skin.",
+    benefits: [
+      "Replenish collagen lost by skin",
+      "Increase skin elasticity",
+      "The skin becomes smooth and elastic",
+      "Provide skin moisturizing repair",
+    ],
+    howToUse: [
+      { title: "Cleanse", detail: "Thoroughly wash and dry your face." },
+      {
+        title: "Apply",
+        detail:
+          "Unfold the sheet mask and smooth it evenly over your facial contours.",
+      },
+      {
+        title: "Rest",
+        detail:
+          "Leave on for 15 to 20 minutes to allow the essence to fully absorb.",
+      },
+      {
+        title: "Massage",
+        detail:
+          "Remove the mask and gently pat any remaining serum into the skin.",
+      },
+    ],
+    ingredients:
+      "Pure Natural Active Collagen, Essential Proteins, and Hydrating Serum Complex.",
+    skinTypes: "For all skin types",
+    // weight: "Net: 25g",
+  },
+  {
+    slug: "bioaqua-vitamin-c-mask",
+    name: "Bioaqua Vitamin C Beautiful Skin Mask",
+    tagline: "Hydrate Skin, Light Breathable",
+    category: "Skin Care",
+    price: "KES 200", // Kept consistent with the sheet mask pricing template
+    compareAtPrice: "KES 300",
+    image: "/products/vitamin_c_mask_1.jpeg",
+    images: [
+      "/products/vitamin_c_mask_1.jpeg",
+      "/products/vitamin_c_mask_2.jpeg",
+    ],
+    short:
+      "A light, breathable facial sheet mask enriched with Vitamin C to intensely hydrate, brighten, and refresh the skin.",
+    benefits: [
+      "Deeply hydrates and locks in moisture",
+      "Brightens and evens out skin tone",
+      "Lightweight and highly breathable sheet design",
+    ],
+    howToUse: [
+      { title: "Cleanse", detail: "Thoroughly wash and dry your face." },
+      {
+        title: "Apply",
+        detail:
+          "Unfold the mask and smooth it evenly across your facial contours.",
+      },
+      {
+        title: "Rest",
+        detail:
+          "Leave on for 15 to 20 minutes to let the skin absorb the essence.",
+      },
+      {
+        title: "Finish",
+        detail:
+          "Remove the mask and gently pat any remaining serum into the skin.",
+      },
+    ],
+    ingredients:
+      "Vitamin C Extract, Hyaluronic Acid, and Hydrating Botanical Complex.",
+    skinTypes: "For all skin types",
+    // weight: "25g e 0.88FL.OZ"
+  },
+  {
+    slug: "sadoer-kojic-acid-facial-mask",
+    name: "Sadoer Kojic Acid Whitening Freckles Facial Mask",
+    tagline: "7 Days Quick Whitening • Deeply Nourishing Restorative",
+    category: "Skin Care",
+    price: "KES 200", // Kept consistent with your sheet mask pricing template
+    compareAtPrice: "KES 300",
+    image: "/products/kojic_acid_mask_1.jpeg",
+    images: [
+      "/products/kojic_acid_mask_1.jpeg",
+      "/products/kojic_acid_mask_2.jpeg",
+    ],
+    short:
+      "A specialized brightening sheet mask combining Niacinamide, Hyaluronic Acid, and Centella Asiatica to target dark spots, hydrate, and calm the skin.",
+    benefits: [
+      "Whitening Lightening Of Pigmentation",
+      "Hydrates Firms Smoothes Skin",
+      "Nourish Soothes Acne-prone Skin",
+    ],
+    howToUse: [
+      {
+        title: "Cleanse",
+        detail: "Thoroughly cleanse and dry your face before application.",
+      },
+      {
+        title: "Apply",
+        detail:
+          "Unfold the mask sheet and position it smoothly over your face contours.",
+      },
+      {
+        title: "Rest",
+        detail:
+          "Leave on for 15 to 20 minutes to allow the whitening essence to absorb.",
+      },
+      {
+        title: "Finish",
+        detail:
+          "Remove the mask and gently tap remaining fluid until completely absorbed.",
+      },
+    ],
+    ingredients:
+      "Kojic Acid, Niacinamide, Hyaluronic Acid, Centella Asiatica Extract.",
+    skinTypes: "Suitable for acne-prone, hyperpigmented, and all skin types",
+    // weight: "30g/1.1OZ"
+  },
+  {
+    slug: "bioaqua-rice-raw-pulp-mask",
+    name: "Bioaqua Rice Raw Pulp Facial Mask",
+    tagline: "Added Rice Extract",
+    category: "Skin Care",
+    price: "KES 200", // Kept consistent with your sheet mask pricing template
+    compareAtPrice: "KES 300",
+    image: "/products/rice_mask_1.jpeg",
+    images: ["/products/rice_mask_1.jpeg", "/products/rice_mask_2.jpeg"],
+    short:
+      "A deeply hydrating and smoothing sheet mask infused with natural rice extract to ease skin dryness and refine pores.",
+    benefits: [
+      "Relieve dryness and tightness",
+      "Nourishes the skin, shrinks pores",
+      "Long-lasting moisturizing",
+    ],
+    howToUse: [
+      {
+        title: "Cleanse",
+        detail: "Thoroughly cleanse and dry your face before use.",
+      },
+      {
+        title: "Apply",
+        detail:
+          "Unfold the mask and smooth it evenly over your facial contours.",
+      },
+      {
+        title: "Rest",
+        detail:
+          "Leave on for 15 to 20 minutes to allow the raw rice pulp essence to absorb.",
+      },
+      {
+        title: "Finish",
+        detail:
+          "Remove the mask and gently pat any remaining fluid into your skin.",
+      },
+    ],
+    ingredients:
+      "Rice Raw Pulp Extract (Oryza Sativa), Hyaluronic Acid, Glycerin, Botanical Nourishing Agents.",
+    skinTypes: "For all skin types",
+    // weight: "Net: 25g"
+  },
+  {
+    slug: "sadoer-honey-facial-mask",
+    name: "Sadoer Plant Mask Series Honey Soft Smooth Facial Mask",
+    tagline: "Let Your Skin Glow With Youth • Deep Repair And Moisturize",
+    category: "Skin Care",
+    price: "KES 200", // Kept consistent with your sheet mask pricing template
+    compareAtPrice: "KES 300",
+    image: "/products/honey_face_mask_1.jpeg",
+    images: [
+      "/products/honey_face_mask_1.jpeg",
+      // "/products/honey_face_mask_2.jpeg",
+    ],
+    short:
+      "A deeply repairing and moisturizing sheet mask featuring a light, soft film cloth that allows multiple nutrients to penetrate and revitalize the skin.",
+    benefits: [
+      "Replenish Water and Nutrients", // Typo from physical label 'Nnutrients' corrected for cleaner frontend display
+      "Brighten Skin Tone",
+      "Multiple Nutrient Penetration",
+      "Film Cloth is Soft And Light",
+    ],
+    howToUse: [
+      {
+        title: "Cleanse",
+        detail: "Thoroughly cleanse and dry your face before use.",
+      },
+      {
+        title: "Apply",
+        detail:
+          "Unfold the mask and smooth it evenly over your facial contours.",
+      },
+      {
+        title: "Rest",
+        detail:
+          "Leave on for 15 to 20 minutes to let the skin absorb the honey essence.",
+      },
+      {
+        title: "Finish",
+        detail:
+          "Remove the mask and gently pat any remaining fluid into your skin.",
+      },
+    ],
+    ingredients:
+      "Honey Extract, Royal Jelly Extract, Hyaluronic Acid, Glycerin, Botanical Nourishing Complex.",
+    skinTypes: "For all skin types",
+    // weight: "NET: 25g",
+  },
+  {
+    slug: "guli-girl-magic-lip-oil",
+    name: "Guli Girl Magic Lip Oil",
+    tagline: "Nourishing Lip Care",
+    category: "Lip Care",
+    price: "KES 150",
+    compareAtPrice: "KES 250", // Standard retail markup placeholder, adjust as needed
+    image: "/products/lip_oil_1.jpeg",
+    images: [
+      "/products/lip_oil_1.jpeg",
+      "/products/lip_oil_2.jpeg",
+      "/products/lip_oil_3.jpeg",
+    ],
+    short:
+      "A hydrating and glossy lip oil designed in an adorable character bottle to provide long-lasting nourishment and a soft shine.",
+    benefits: [
+      "Provides deep hydration to dry or chapped lips",
+      "Delivers a lightweight, non-sticky high-shine finish",
+      "Locks in moisture for soft, smooth lips all day",
+    ],
+    howToUse: [
+      {
+        title: "Application",
+        detail:
+          "Unscrew the character cap and use the wand to sweep evenly across bare lips.",
+      },
+      {
+        title: "Layering",
+        detail:
+          "Wear alone for a natural glossy look, or layer over your favorite lipstick for added shine.",
+      },
+    ],
+    ingredients:
+      "Mineral Oil, Polyisobutene, Hydrating Botanical Extracts, Fragrance, and Essential Lip-Nourishing Complex.",
+    skinTypes: "For all skin types",
+  },
+  {
+    slug: "guli-girl-hydra-kiss-lip-oil",
+    name: "Guli Girl Hydra Kiss Lip Oil",
+    tagline: "Hydra Kiss • High-Shine Nourishment",
+    category: "Lip Care",
+    price: "KES 150", // Kept consistent with your lip care pricing template
+    compareAtPrice: "KES 250",
+    image: "/products/lip_oil_v1.jpeg",
+    images: ["/products/lip_oil_v1.jpeg"],
+    short:
+      "A sleek, premium lip oil formulated to deliver deep hydration and a high-shine glossy finish while keeping lips comfortably soft.",
+    benefits: [
+      "Provides long-lasting moisture and hydration",
+      "Delivers a lightweight, non-sticky glossy shine",
+      "Smooths and conditions dry or chapped lips",
+    ],
+    howToUse: [
+      {
+        title: "Application",
+        detail:
+          "Glide the applicator wand smoothly over bare lips for an instant hydration boost.",
+      },
+      {
+        title: "Layering",
+        detail:
+          "Apply over your favorite matte lip color to add a glassy, comfortable shine finish.",
+      },
+    ],
+    ingredients:
+      "Mineral Oil, Polyisobutene, Hydrogenated Styrene/Isoprene Copolymer, Tocopherol (Vitamin E), Fragrance.",
+    skinTypes: "For all skin types",
+    // weight: "NET: 8ml"
+  },
+  {
+    slug: "sadoer-lemon-hand-cream",
+    name: "Sadoer Lemon Fruit Hand Cream",
+    tagline: "Fruit Fragrant • Tender and Moist",
+    category: "Body Care",
+    price: "KES 200", // Kept consistent with small-item pricing, adjust as needed
+    compareAtPrice: "KES 269", 
+    image: "/products/hand_cream_1.jpeg",
+    images: ["/products/hand_cream_1.jpeg"],
+    short:
+      "A deeply moisturizing hand cream infused with a refreshing lemon fruit fragrance to leave your hands feeling soft, smooth, and beautifully hydrated.",
+    benefits: [
+      "Provides rich hydration for dry hands",
+      "Delivers a crisp, uplifting citrus scent",
+      "Leaves skin feeling tender and thoroughly moist",
+    ],
+    howToUse: [
+      { title: "Application", detail: "Squeeze a small amount onto the back of your hands and rub together gently." },
+      { title: "Frequency", detail: "Massage into hands and cuticles as needed throughout the day, especially after washing." },
+    ],
+    ingredients: "Lemon Fruit Extract (Citrus Limon), Glycerin, Mineral Oil, Shea Butter, Botanical Extracts, Fragrance.",
+    skinTypes: "For all skin types",
+    // weight: "Net: 30g"
+}
+
 ];
 
 export function getProduct(slug: string) {
