@@ -9,6 +9,7 @@ const slides = [
   "/hero3.jpeg",
   "/hero4.jpeg",
   "/hero5.jpeg",
+  "/hero6.jpeg",
 ];
 
 const EASE = cubicBezier(0.22, 1, 0.36, 1);

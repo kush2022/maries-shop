@@ -10,8 +10,8 @@ export default function Footer() {
               {siteConfig.brand}
             </span>
             <p className="mt-3 max-w-xs font-sans text-sm leading-relaxed text-ink-soft">
-              {siteConfig.tagline} Made with real botanical extracts —
-              gentle, pure, effective.
+              {siteConfig.tagline} Made with real botanical extracts.
+              Gentle, pure, effective.
             </p>
           </div>
 

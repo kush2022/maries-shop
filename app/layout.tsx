@@ -21,9 +21,9 @@ const dancingScript = Dancing_Script({
 const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
-  title: "Marie's — Natural Beauty, Gently Made",
+  title: "Marie's | Natural Beauty, Gently Made",
   description:
-    "Marie's is a small-batch natural skincare line — rose water toner, clay masks and body oils made with real botanical extracts.",
+    "Marie's is a small-batch natural skincare line: rose water toner, clay masks and body oils made with real botanical extracts.",
 };
 
 export default function RootLayout({

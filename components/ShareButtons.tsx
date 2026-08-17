@@ -17,7 +17,7 @@ export default function ShareButtons({
     typeof window !== "undefined"
       ? window.location.origin + window.location.pathname
       : "";
-  const text = `${product.name} — Marie's Skincare`;
+  const text = `${product.name} | Marie's Skincare`;
 
   const handleShare = async () => {
     if (typeof navigator !== "undefined" && navigator.share) {

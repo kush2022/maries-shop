@@ -1,4 +1,4 @@
-// A hand-built line-art rose that "blooms" open on load — each petal
+// A hand-built line-art rose that "blooms" open on load. Each petal
 // scales in with a staggered delay. This is the page's signature
 // element: it ties directly to the product (rose water) instead of
 // a generic decorative shape.

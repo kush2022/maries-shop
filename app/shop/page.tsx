@@ -4,7 +4,7 @@ import ShopBrowser from "@/components/ShopBrowser";
 export const metadata: Metadata = {
   title: "Shop | Marie's Botanicals",
   description:
-    "Browse Marie's full range of small-batch, natural botanical skincare — rose water toners, clay masks and body oils.",
+    "Browse Marie's full range of small-batch, natural botanical skincare: rose water toners, clay masks and body oils.",
 };
 
 export default function ShopPage() {

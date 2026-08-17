@@ -23,7 +23,7 @@ export type Product = {
  * ----------------
  * "Marie's Rose Water" is filled in from your product sticker.
  * The other two are placeholders so the catalog grid, filtering and
- * detail-page layout are ready — swap in your real products (name,
+ * detail-page layout are ready. Swap in your real products (name,
  * copy, images, price) whenever you have them. Just duplicate an
  * object below and give it a unique `slug`.
  */
@@ -43,7 +43,7 @@ export const products: Product[] = [
     ],
     badge: "100% Natural",
     short:
-      "A pure, refreshing mist made with real rose extract — hydrates, soothes and revitalizes skin in one spray.",
+      "A pure, refreshing mist made with real rose extract. Hydrates, soothes and revitalizes skin in one spray.",
     benefits: [
       "Hydrates and refreshes the skin",
       "Helps soothe redness and irritation",
@@ -87,7 +87,7 @@ export const products: Product[] = [
     image: "/products/qusil-powder-1.jpeg",
     images: ["/products/qusil-powder-1.jpeg", "/products/qusil-powder-2.jpeg"],
     short:
-      "PLACEHOLDER — replace with your real product copy. A mineral-rich clay mask blended with rose for a gentle deep clean.",
+      "PLACEHOLDER. Replace with your real product copy. A mineral-rich clay mask blended with rose for a gentle deep clean.",
     benefits: [
       "Draws out impurities without over-drying",
       "Softens the look of pores",
@@ -327,6 +327,7 @@ export const products: Product[] = [
     images: [
       "/products/vitamin_c_mask_1.jpeg",
       "/products/vitamin_c_mask_2.jpeg",
+      "/products/vitamin_c_mask_3.jpeg",
     ],
     short:
       "A light, breathable facial sheet mask enriched with Vitamin C to intensely hydrate, brighten, and refresh the skin.",
