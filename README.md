@@ -64,3 +64,19 @@ public/products/            → product photos
   `@theme`. Change the hex values there to retheme the whole site.
 - The blooming rose illustration in the hero (`components/BloomRose.tsx`) is
   hand-drawn SVG, not a stock icon. Feel free to adjust the petal paths.
+
+## AI skin scan backend
+
+The skin-analysis page (`/skin-analysis`) posts the uploaded photo to your
+FastAPI backend and renders the returned routine/products. Point it at your API
+with an env var (create `.env.local`):
+
+```
+NEXT_PUBLIC_ANALYSIS_API_URL=https://your-api.example.com
+```
+
+It expects a `POST /analyze-skin` endpoint that accepts a multipart form field
+named `image` and returns the `AnalyzeSkinResponse` schema (face_detected,
+confidence, skin_type, concerns, zones, hydration, spf_needed,
+photo_quality_feedback, observations, see_dermatologist, dermatologist_note,
+routine[], optional_addons[], disclaimer).

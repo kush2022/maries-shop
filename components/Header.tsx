@@ -22,6 +22,12 @@ export default function Header() {
             Shop
           </Link>
           <Link
+            href="/skin-analysis"
+            className="hidden font-sans text-sm font-medium text-ink hover:text-rose-deep sm:inline"
+          >
+            Skin Scan
+          </Link>
+          <Link
             href="/#about"
             className="hidden font-sans text-sm font-medium text-ink hover:text-rose-deep sm:inline"
           >

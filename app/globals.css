@@ -129,6 +129,41 @@ button:focus-visible {
   transform: translateY(0);
 }
 
+/* --- AI skin scan (skin-analysis page) --- */
+.scan-line {
+  will-change: transform;
+}
+@keyframes scan-grid-pan {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 24px;
+  }
+}
+.scan-grid {
+  background-image: linear-gradient(
+      to right,
+      rgb(255 255 255 / 0.14) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.14) 1px, transparent 1px);
+  background-size: 24px 24px;
+  animation: scan-grid-pan 1.2s linear infinite;
+}
+@keyframes blink-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+.blink-dot {
+  animation: blink-dot 1.1s ease-in-out infinite;
+}
+
 @theme inline {
   --font-heading: var(--font-sans);
   --font-sans: var(--font-sans);
