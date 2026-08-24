@@ -58,14 +58,27 @@ data/
 public/products/            → product photos
 ```
 
-## Design notes
+## SEO
 
-- Colors, fonts and spacing are defined once in `app/globals.css` under
-  `@theme`. Change the hex values there to retheme the whole site.
-- The blooming rose illustration in the hero (`components/BloomRose.tsx`) is
-  hand-drawn SVG, not a stock icon. Feel free to adjust the petal paths.
+The site includes comprehensive SEO setup:
 
-## AI skin scan backend
+- **Metadata**: Each page has optimized `title`, `description`, Open Graph, and Twitter Card tags
+- **Structured Data (JSON-LD)**:
+  - `WebSite` + `Organization` on all pages
+  - `Product` schema on product detail pages with price, availability, brand
+  - `BreadcrumbList` on shop, product, and skin-analysis pages
+  - `FAQPage` schema on home and skin-analysis pages
+- **Technical SEO**:
+  - Auto-generated `sitemap.xml` at `/sitemap.xml`
+  - `robots.txt` at `/robots.txt`
+  - `site.webmanifest` for PWA support
+  - Canonical URLs on all pages
+- **Social**: Open Graph and Twitter Card images at `/og-image.svg`
+
+To customize:
+1. Replace `/public/og-image.svg` with your branded 1200×630 image
+2. Update `siteUrl` in `lib/seo.ts` for production domain
+3. Add real product reviews to enable `aggregateRating` in Product schema
 
 The skin-analysis page (`/skin-analysis`) posts the uploaded photo to your
 FastAPI backend and renders the returned routine/products. Point it at your API

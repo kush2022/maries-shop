@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#fbf1ec"/>
+  <circle cx="600" cy="315" r="220" fill="#f3e0d8"/>
+  <path d="M600 150 C500 95 440 130 440 195 C440 255 500 290 600 360 C700 290 760 255 760 195 C760 130 700 95 600 150 Z" fill="#b5335a" opacity="0.12"/>
+  <circle cx="600" cy="220" r="30" fill="#c9a24b"/>
+  <text x="600" y="420" font-family="Georgia, serif" font-size="48" font-weight="600" fill="#2b2420" text-anchor="middle">Marie's</text>
+  <text x="600" y="475" font-family="Georgia, serif" font-size="24" font-style="italic" fill="#8f2547" text-anchor="middle">Natural Beauty, Gently Made</text>
+  <text x="600" y="530" font-family="system-ui, sans-serif" font-size="18" fill="#6b5f57" text-anchor="middle">Small-batch • Botanical • Kenyan-made</text>
+</svg>

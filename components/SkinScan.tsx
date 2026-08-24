@@ -54,7 +54,7 @@ type AnalysisResult = {
   disclaimer: string;
 };
 
-const API_BASE = process.env.NEXT_PUBLIC_ANALYSIS_API_URL ?? "https://maries-agent-0dac6215.fastapicloud.dev";
+const API_BASE = process.env.NEXT_PUBLIC_ANALYSIS_API_URL ?? "http://localhost:8000";
 
 async function analyzeImage(file: File): Promise<AnalysisResult> {
   const body = new FormData();
