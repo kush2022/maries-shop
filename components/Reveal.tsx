@@ -31,6 +31,7 @@ type RevealProps = {
   delay?: number;
   className?: string;
   as?: "div" | "li";
+  onClick?: () => void;
 };
 
 export default function Reveal({
@@ -38,6 +39,7 @@ export default function Reveal({
   delay = 0,
   className = "",
   as = "div",
+  onClick,
 }: RevealProps) {
   const divRef = useReveal<HTMLDivElement>();
   const liRef = useReveal<HTMLLIElement>();
@@ -45,14 +47,14 @@ export default function Reveal({
 
   if (as === "li") {
     return (
-      <li ref={liRef} className={`reveal ${className}`} style={style}>
+      <li ref={liRef} className={`reveal ${className}`} style={style} onClick={onClick}>
         {children}
       </li>
     );
   }
 
   return (
-    <div ref={divRef} className={`reveal ${className}`} style={style}>
+    <div ref={divRef} className={`reveal ${className}`} style={style} onClick={onClick}>
       {children}
     </div>
   );

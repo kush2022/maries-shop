@@ -567,7 +567,7 @@ export const products: Product[] = [
     tagline: "Fruit Fragrant • Tender and Moist",
     category: "Body Care",
     price: "KES 200", // Kept consistent with small-item pricing, adjust as needed
-    compareAtPrice: "KES 269", 
+    compareAtPrice: "KES 269",
     image: "/products/hand_cream_1.jpeg",
     images: ["/products/hand_cream_1.jpeg"],
     short:
@@ -578,12 +578,161 @@ export const products: Product[] = [
       "Leaves skin feeling tender and thoroughly moist",
     ],
     howToUse: [
-      { title: "Application", detail: "Squeeze a small amount onto the back of your hands and rub together gently." },
-      { title: "Frequency", detail: "Massage into hands and cuticles as needed throughout the day, especially after washing." },
+      {
+        title: "Application",
+        detail:
+          "Squeeze a small amount onto the back of your hands and rub together gently.",
+      },
+      {
+        title: "Frequency",
+        detail:
+          "Massage into hands and cuticles as needed throughout the day, especially after washing.",
+      },
     ],
-    ingredients: "Lemon Fruit Extract (Citrus Limon), Glycerin, Mineral Oil, Shea Butter, Botanical Extracts, Fragrance.",
+    ingredients:
+      "Lemon Fruit Extract (Citrus Limon), Glycerin, Mineral Oil, Shea Butter, Botanical Extracts, Fragrance.",
     skinTypes: "For all skin types",
     // weight: "Net: 30g"
+  },
+  {
+    slug: "maries-turmeric-soap",
+    name: "Marie’s Turmeric Soap",
+    tagline: "Natural • Gentle • Nourishing",
+    category: "Skin Care",
+    price: "KES 200", // Adjust to match your soap bar pricing catalog
+    compareAtPrice: "KES 249",
+    image: "/products/tumeric_soap_1.jpeg", // Primary image for the product
+    images: [
+      "/products/tumeric_soap_1.jpeg",
+      "/products/tumeric_soap_2.jpeg",
+    ],
+    short:
+      "A beautifully crafted, natural turmeric soap bar molded to gently cleanse, brighten, and deeply condition your complexion.",
+    benefits: [
+      "Brightens Skin & Evens Tone",
+      "Helps Reduce & Moisturizes",
+      "Soothes & Revitalizes",
+    ],
+    howToUse: [
+      {
+        title: "Lather",
+        detail:
+          "Wet your hands and rub the soap bar to create a rich, creamy lather.",
+      },
+      {
+        title: "Application",
+        detail:
+          "Massage gently onto your face or body in circular motions, avoiding the eyes.",
+      },
+      {
+        title: "Rinse",
+        detail: "Rinse off completely with lukewarm water and pat dry.",
+      },
+    ],
+    ingredients:
+      "Natural Turmeric Extract, Botanical Oils, Essential Minerals, and Moisturizing Complex.",
+    skinTypes: "For all skin types",
+  },
+  {
+    slug: "maries-aloe-vera-soap",
+    name: "Marie’s Aloe Vera Soap",
+    tagline: "Natural • Gentle • Nourishing", // Keeping branding consistent with Marie's soap line
+    category: "Skin Care",
+    price: "KES 200", // Kept consistent with the Marie's soap template
+    compareAtPrice: "KES 249",
+    image: "/products/aloe_vera_soap_1.jpeg", // Primary image for the product
+    images: [
+      "/products/aloe_vera_soap_1.jpeg",
+      "/products/aloe_vera_soap_2.jpeg",
+    ],
+    short:
+      "A beautifully crafted, natural aloe vera soap bar molded into a stunning floral design to deeply soothe, hydrate, and cleanse your skin.",
+    benefits: [
+      "Deeply Hydrates & Locks Moisture",
+      "Soothes Irritation & Redness",
+      "Gently Cleanses Sensitive Skin",
+    ],
+    howToUse: [
+      {
+        title: "Lather",
+        detail:
+          "Wet your hands and rub the soap bar to create a rich, creamy lather.",
+      },
+      {
+        title: "Application",
+        detail:
+          "Massage gently onto your face or body in circular motions, avoiding the eyes.",
+      },
+      {
+        title: "Rinse",
+        detail: "Rinse off completely with clean water and pat dry.",
+      },
+    ],
+    ingredients:
+      "Natural Aloe Vera Extract, Premium Botanical Oils, Essential Minerals, and Nourishing Plant Extracts.",
+    skinTypes: "For all skin types, especially dry and sensitive skin",
+  },
+  {
+    slug: "maries-black-seed-soap",
+    name: "Marie’s Black Seed Soap",
+    tagline: "Natural • Purifying • Nourishing",
+    category: "Skin Care",
+    price: "KES 200",
+    compareAtPrice: "KES 249",
+    image: "/products/black_seed_soap_1.jpeg",
+    images: [
+      "/products/black_seed_soap_1.jpeg",
+      "/products/black_seed_soap_2.jpeg",
+    ],
+    short:
+      "A beautifully crafted, natural black seed soap bar molded to deeply purify, detoxify, and nourish your skin complexion.",
+    benefits: [
+      "Deeply purifies and detoxifies pores",
+      "Nourishes the skin barrier naturally",
+      "Clears away impurities for a refreshed feel",
+    ],
+    howToUse: [
+      {
+        title: "Lather",
+        detail: "Wet your hands and rub the soap bar to create a rich lather.",
+      },
+      {
+        title: "Application",
+        detail:
+          "Massage gently onto your face or body in circular motions, avoiding the eyes.",
+      },
+      {
+        title: "Rinse",
+        detail: "Rinse off completely with clean water and pat dry.",
+      },
+    ],
+    ingredients:
+      "Natural Black Seed Extract (Nigella Sativa), Premium Botanical Oils, Essential Minerals, and Nourishing Plant Extracts.",
+    skinTypes: "Suitable for All Skin Types",
+  },
+  {
+    slug: "maries-olive-oil-soap",
+    name: "Marie’s Olive Oil Soap",
+    tagline: "Natural • Gentle • Nourishing", // Following the consistent branding pattern for Marie's artisan soaps
+    category: "Skin Care",
+    price: "KES 200", // Kept consistent with the Marie's artisan soap line pricing
+    compareAtPrice: "KES 249", 
+    image: "/products/olive_soap_1.jpeg",
+    images: ["/products/olive_soap_1.jpeg"],
+    short:
+      "A beautifully crafted, natural olive oil soap bar molded into an elegant floral design to deeply moisturize, soften, and protect your skin skin barrier.",
+    benefits: [
+      "Deeply moisturizes and conditions dry skin",
+      "Rich in natural antioxidants to protect skin cells",
+      "Provides a gentle, non-stripping cleanse",
+    ],
+    howToUse: [
+      { title: "Lather", detail: "Wet your hands and rub the soap bar to create a rich, creamy lather." },
+      { title: "Application", detail: "Massage gently onto your face or body in circular motions, avoiding the eyes." },
+      { title: "Rinse", detail: "Rinse off completely with clean water and pat dry." },
+    ],
+    ingredients: "Pure Olive Oil (Olea Europaea), Premium Botanical Oils, Essential Minerals, and Vitamin E.",
+    skinTypes: "For all skin types, especially dry and sensitive skin",
 }
 
 ];

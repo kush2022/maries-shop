@@ -1,5 +1,13 @@
 import Link from "next/link";
 import { siteConfig, waLink } from "@/data/config";
+import MobileMenu from "@/components/MobileMenu";
+
+const navLinks = [
+  { href: "/shop", label: "Shop" },
+  { href: "/packages", label: "Packages" },
+  { href: "/skin-analysis", label: "Skin Scan" },
+  { href: "/#about", label: "About" },
+];
 
 export default function Header() {
   return (
@@ -14,25 +22,17 @@ export default function Header() {
           </span>
         </Link>
 
-        <nav className="flex items-center gap-6">
-          <Link
-            href="/shop"
-            className="hidden font-sans text-sm font-medium text-ink hover:text-rose-deep sm:inline"
-          >
-            Shop
-          </Link>
-          <Link
-            href="/skin-analysis"
-            className="hidden font-sans text-sm font-medium text-ink hover:text-rose-deep sm:inline"
-          >
-            Skin Scan
-          </Link>
-          <Link
-            href="/#about"
-            className="hidden font-sans text-sm font-medium text-ink hover:text-rose-deep sm:inline"
-          >
-            About
-          </Link>
+        {/* Desktop nav */}
+        <nav className="hidden items-center gap-6 sm:flex">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="font-sans text-sm font-medium text-ink hover:text-rose-deep"
+            >
+              {link.label}
+            </Link>
+          ))}
           <a
             href={waLink()}
             target="_blank"
@@ -42,6 +42,9 @@ export default function Header() {
             Order on WhatsApp
           </a>
         </nav>
+
+        {/* Mobile hamburger */}
+        <MobileMenu links={navLinks} />
       </div>
     </header>
   );
