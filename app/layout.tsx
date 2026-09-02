@@ -106,7 +106,7 @@ export default function RootLayout({
         className={`${fraunces.variable} ${dancingScript.variable} ${inter.variable} antialiased`}
       >
         <Header />
-        {children}
+        <main className="pt-20">{children}</main>
         <Footer />
       </body>
     </html>

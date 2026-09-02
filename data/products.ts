@@ -598,14 +598,11 @@ export const products: Product[] = [
     slug: "maries-turmeric-soap",
     name: "Marie’s Turmeric Soap",
     tagline: "Natural • Gentle • Nourishing",
-    category: "Skin Care",
+    category: "Soap Care",
     price: "KES 200", // Adjust to match your soap bar pricing catalog
     compareAtPrice: "KES 249",
     image: "/products/tumeric_soap_1.jpeg", // Primary image for the product
-    images: [
-      "/products/tumeric_soap_1.jpeg",
-      "/products/tumeric_soap_2.jpeg",
-    ],
+    images: ["/products/tumeric_soap_1.jpeg", "/products/tumeric_soap_2.jpeg"],
     short:
       "A beautifully crafted, natural turmeric soap bar molded to gently cleanse, brighten, and deeply condition your complexion.",
     benefits: [
@@ -637,7 +634,7 @@ export const products: Product[] = [
     slug: "maries-aloe-vera-soap",
     name: "Marie’s Aloe Vera Soap",
     tagline: "Natural • Gentle • Nourishing", // Keeping branding consistent with Marie's soap line
-    category: "Skin Care",
+    category: "Soap Care",
     price: "KES 200", // Kept consistent with the Marie's soap template
     compareAtPrice: "KES 249",
     image: "/products/aloe_vera_soap_1.jpeg", // Primary image for the product
@@ -676,7 +673,7 @@ export const products: Product[] = [
     slug: "maries-black-seed-soap",
     name: "Marie’s Black Seed Soap",
     tagline: "Natural • Purifying • Nourishing",
-    category: "Skin Care",
+    category: "Soap Care",
     price: "KES 200",
     compareAtPrice: "KES 249",
     image: "/products/black_seed_soap_1.jpeg",
@@ -714,9 +711,9 @@ export const products: Product[] = [
     slug: "maries-olive-oil-soap",
     name: "Marie’s Olive Oil Soap",
     tagline: "Natural • Gentle • Nourishing", // Following the consistent branding pattern for Marie's artisan soaps
-    category: "Skin Care",
+    category: "Soap Care",
     price: "KES 200", // Kept consistent with the Marie's artisan soap line pricing
-    compareAtPrice: "KES 249", 
+    compareAtPrice: "KES 249",
     image: "/products/olive_soap_1.jpeg",
     images: ["/products/olive_soap_1.jpeg"],
     short:
@@ -727,14 +724,64 @@ export const products: Product[] = [
       "Provides a gentle, non-stripping cleanse",
     ],
     howToUse: [
-      { title: "Lather", detail: "Wet your hands and rub the soap bar to create a rich, creamy lather." },
-      { title: "Application", detail: "Massage gently onto your face or body in circular motions, avoiding the eyes." },
-      { title: "Rinse", detail: "Rinse off completely with clean water and pat dry." },
+      {
+        title: "Lather",
+        detail:
+          "Wet your hands and rub the soap bar to create a rich, creamy lather.",
+      },
+      {
+        title: "Application",
+        detail:
+          "Massage gently onto your face or body in circular motions, avoiding the eyes.",
+      },
+      {
+        title: "Rinse",
+        detail: "Rinse off completely with clean water and pat dry.",
+      },
     ],
-    ingredients: "Pure Olive Oil (Olea Europaea), Premium Botanical Oils, Essential Minerals, and Vitamin E.",
+    ingredients:
+      "Pure Olive Oil (Olea Europaea), Premium Botanical Oils, Essential Minerals, and Vitamin E.",
     skinTypes: "For all skin types, especially dry and sensitive skin",
-}
-
+  },
+  {
+    slug: "maries-turmeric-ginseng-soap",
+    name: "Marie’s Turmeric & Ginseng Soap",
+    tagline: "Natural • Revitalizing • Nourishing",
+    category: "Skin Care",
+    price: "KES 400", // Kept consistent with the Marie's artisan soap line pricing
+    compareAtPrice: "KES 600",
+    image: "/products/tumeric_ginseng_soap_1.jpeg", // Primary image for the product
+    images: [
+      "/products/tumeric_ginseng_soap_1.jpeg",
+      "/products/tumeric_ginseng_soap_2.jpeg",
+    ],
+    short:
+      "A masterfully crafted natural soap bar blending turmeric and ginseng roots to gently cleanse, brighten, and re-energize tired skin.",
+    benefits: [
+      "Brightens the complexion and promotes an even skin tone",
+      "Revitalizes and anti-ages with nutrient-rich ginseng",
+      "Deeply nourishes while providing a gentle, refreshing cleanse",
+    ],
+    howToUse: [
+      {
+        title: "Lather",
+        detail:
+          "Wet your hands and rub the soap bar to create a rich, creamy lather.",
+      },
+      {
+        title: "Application",
+        detail:
+          "Massage gently onto your face or body in circular motions, avoiding the eyes.",
+      },
+      {
+        title: "Rinse",
+        detail: "Rinse off completely with clean water and pat dry.",
+      },
+    ],
+    ingredients:
+      "Natural Turmeric Extract, Ginseng Root Extract, Premium Botanical Oils, Essential Minerals, and Vitamin E.",
+    skinTypes: "Suitable for All Skin Types",
+  },
 ];
 
 export function getProduct(slug: string) {

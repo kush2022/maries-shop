@@ -49,7 +49,7 @@ export default function MobileMenu({
           />
 
           {/* Drawer */}
-          <div className="absolute bottom-0 left-0 right-0 flex flex-col rounded-t-3xl bg-blush shadow-2xl animate-slide-in-up" style={{ height: "85vh" }}>
+          <div className="absolute bottom-0 left-0 right-0 max-h-[85vh] overflow-hidden rounded-t-3xl bg-blush shadow-2xl animate-slide-in-up">
             {/* Drag handle */}
             <div className="flex justify-center pt-3 pb-2">
               <div className="h-1 w-10 rounded-full bg-ink/20" />
@@ -69,24 +69,22 @@ export default function MobileMenu({
             </div>
 
             {/* Links */}
-            <div className="flex-1 overflow-y-auto px-6 py-6">
-              <ul className="space-y-2">
-                {links.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      onClick={() => setOpen(false)}
-                      className="block rounded-2xl px-4 py-4 font-sans text-lg font-medium text-ink transition hover:bg-rose/10 hover:text-rose-deep"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <ul className="px-6 py-4">
+              {links.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className="block rounded-2xl px-4 py-4 font-sans text-lg font-medium text-ink transition hover:bg-rose/10 hover:text-rose-deep"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
 
             {/* WhatsApp CTA */}
-            <div className="shrink-0 border-t border-rose-light/40 px-6 py-5">
+            <div className="border-t border-rose-light/40 px-6 py-5">
               <a
                 href={waLink()}
                 target="_blank"

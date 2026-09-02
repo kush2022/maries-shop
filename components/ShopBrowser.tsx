@@ -8,6 +8,8 @@ import ProductCard from "./ProductCard";
 const categories = [
   "All",
   ...Array.from(new Set(products.map((p) => p.category))),
+  "Fragrance",
+  "Natural Make Up",
 ];
 
 const sorts = [

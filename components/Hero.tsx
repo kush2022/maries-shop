@@ -36,9 +36,9 @@ export default function Hero() {
               className="rise-in mt-4 max-w-md font-sans text-base leading-relaxed text-ink-soft"
               style={{ animationDelay: "0.3s" }}
             >
-              {siteConfig.brand} makes simple, honest skincare from real
-              botanical extracts starting with our rose water toner, pure enough
-              to use morning, midday and night.
+              {siteConfig.brand} creates simple, honest skincare inspired by
+              nature. Thoughtfully formulated with botanical ingredients to
+              elevate your everyday self-care ritual.
             </p>
             <div
               className="rise-in mt-6 flex flex-wrap gap-3"
