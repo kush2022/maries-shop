@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Fraunces, Dancing_Script, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
@@ -110,6 +111,7 @@ export default function RootLayout({
         <main className="pt-20">{children}</main>
         <Footer />
         <FloatingWhatsApp />
+        <Script src="https://js.paystack.co/v1/inline.js" strategy="afterInteractive" />
       </body>
     </html>
   );

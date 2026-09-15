@@ -7,8 +7,11 @@ import {
   Camera,
   CameraOff,
   Check,
+  CreditCard,
   Info,
   Loader2,
+  Lock,
+  Mail,
   RefreshCw,
   ScanFace,
   Sparkles,
@@ -16,6 +19,14 @@ import {
   X,
 } from "lucide-react";
 import Reveal from "./Reveal";
+
+declare global {
+  interface Window {
+    PaystackPop?: {
+      setup: (config: Record<string, unknown>) => { openIframe: () => void } | null;
+    };
+  }
+}
 
 type SkinProduct = {
   name: string;
@@ -54,12 +65,23 @@ type AnalysisResult = {
   disclaimer: string;
 };
 
+type PreviewResult = {
+  face_detected: boolean;
+  confidence: string;
+  skin_type: string | null;
+  concerns: string[];
+  observations: string;
+  photo_quality_feedback: string;
+};
+
 const API_BASE = process.env.NEXT_PUBLIC_ANALYSIS_API_URL ?? "https://maries-backend-18cb3866.fastapicloud.dev";
 
-async function analyzeImage(file: File): Promise<AnalysisResult> {
+async function analyzeImage(file: File, reference?: string): Promise<AnalysisResult | PreviewResult> {
   const body = new FormData();
   body.append("image", file);
-  const res = await fetch(`${API_BASE}/analyze-skin`, { method: "POST", body });
+  let url = `${API_BASE}/analyze-skin`;
+  if (reference) url += `?reference=${encodeURIComponent(reference)}`;
+  const res = await fetch(url, { method: "POST", body });
   if (!res.ok) {
     let detail = "Analysis failed. Please try again with a clear, well-lit photo.";
     try {
@@ -70,7 +92,7 @@ async function analyzeImage(file: File): Promise<AnalysisResult> {
     }
     throw new Error(detail);
   }
-  return (await res.json()) as AnalysisResult;
+  return (await res.json()) as AnalysisResult | PreviewResult;
 }
 
 function formatSkinType(skinType: string | null) {
@@ -106,15 +128,19 @@ const scanSteps = [
 const SCAN_STEP_MS = 620;
 
 export default function SkinScan() {
-  const [phase, setPhase] = useState<"upload" | "scanning" | "results">("upload");
+  const [phase, setPhase] = useState<"upload" | "scanning" | "preview" | "paying" | "verifying" | "results">("upload");
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [file, setFile] = useState<File | null>(null);
   const [stepIndex, setStepIndex] = useState(0);
+  const [previewResult, setPreviewResult] = useState<PreviewResult | null>(null);
   const [result, setResult] = useState<AnalysisResult | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [cameraError, setCameraError] = useState<string | null>(null);
   const [cameraOpen, setCameraOpen] = useState(false);
+  const [email, setEmail] = useState("");
+  const [payError, setPayError] = useState<string | null>(null);
+  const [payLoading, setPayLoading] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const streamRef = useRef<MediaStream | null>(null);
@@ -136,8 +162,12 @@ export default function SkinScan() {
     });
     setFile(null);
     setStepIndex(0);
+    setPreviewResult(null);
     setResult(null);
     setError(null);
+    setEmail("");
+    setPayError(null);
+    setPayLoading(false);
     if (inputRef.current) inputRef.current.value = "";
   }, [stopCamera]);
 
@@ -149,6 +179,7 @@ export default function SkinScan() {
       return URL.createObjectURL(file);
     });
     setPhase("upload");
+    setPreviewResult(null);
     setResult(null);
   }, []);
 
@@ -200,8 +231,8 @@ export default function SkinScan() {
           setTimeout(resolve, scanSteps.length * SCAN_STEP_MS - elapsed)
         );
       }
-      setResult(res);
-      setPhase("results");
+      setPreviewResult(res as PreviewResult);
+      setPhase("preview");
     } catch (err) {
       const elapsed = Date.now() - startedAt;
       if (elapsed < scanSteps.length * SCAN_STEP_MS) {
@@ -211,6 +242,46 @@ export default function SkinScan() {
       }
       setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
       setPhase("upload");
+    }
+  };
+
+  const startPayment = async () => {
+    if (!email || !file) return;
+    setPayLoading(true);
+    setPayError(null);
+    try {
+      const ref = `scan_${Date.now()}`;
+
+      const handler = window.PaystackPop?.setup({
+        key: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY,
+        email,
+        amount: 3000, // 30 KES in subunits
+        currency: "KES",
+        ref,
+        callback: (response: { reference: string }) => {
+          setPhase("verifying");
+          analyzeImage(file, response.reference)
+            .then((fullRes) => {
+              setResult(fullRes as AnalysisResult);
+              setPhase("results");
+            })
+            .catch(() => {
+              setPayError("Payment succeeded but we couldn't load your results. Please refresh and try again.");
+              setPhase("preview");
+            })
+            .finally(() => setPayLoading(false));
+        },
+        onClose: () => {
+          setPayLoading(false);
+          setPhase("preview");
+          setPayError("Payment was cancelled. You can try again when ready.");
+        },
+      });
+      handler?.openIframe();
+    } catch (err) {
+      setPayError(err instanceof Error ? err.message : "Something went wrong with payment.");
+      setPayLoading(false);
+      setPhase("preview");
     }
   };
 
@@ -488,6 +559,98 @@ export default function SkinScan() {
               <p className="mt-6 font-sans text-xs text-ink-soft">
                 Takes a few seconds. We never store your photo.
               </p>
+            </div>
+          ) : phase === "preview" && previewResult ? (
+            <div>
+              {!previewResult.face_detected ? (
+                <>
+                  <h2 className="font-display text-2xl text-ink">
+                    We couldn&apos;t find a face
+                  </h2>
+                  <p className="mt-3 font-sans text-sm leading-relaxed text-ink-soft">
+                    Try again with a clear, front-facing photo in good, even light.
+                    Make sure your whole face is in frame and you&apos;re not wearing
+                    sunglasses.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={reset}
+                    className="mt-5 rounded-full bg-ink px-7 py-3 font-sans text-sm font-semibold text-blush transition hover:bg-rose-deep"
+                  >
+                    Try another photo
+                  </button>
+                </>
+              ) : (
+                <>
+                  <h2 className="font-display text-2xl text-ink">
+                    Here&apos;s what we found
+                  </h2>
+                  <div className="mt-5 space-y-4">
+                    <div className="rounded-2xl bg-blush-deep p-5">
+                      <p className="font-sans text-xs font-semibold tracking-widest text-moss uppercase">
+                        Skin type
+                      </p>
+                      <p className="mt-2 font-display text-2xl text-ink">
+                        {formatSkinType(previewResult.skin_type) ?? "Not clear"}
+                      </p>
+                      <p className="mt-1 font-sans text-sm text-ink-soft">
+                        Confidence: {previewResult.confidence}
+                      </p>
+                    </div>
+                    {previewResult.concerns.length > 0 && (
+                      <div>
+                        <p className="font-sans text-xs font-semibold tracking-widest text-moss uppercase">
+                          Concerns detected
+                        </p>
+                        <div className="mt-2 flex flex-wrap gap-2">
+                          {previewResult.concerns.map((c) => (
+                            <span
+                              key={c}
+                              className="rounded-full bg-white px-3 py-1 font-sans text-sm font-semibold text-rose-deep"
+                            >
+                              {c.replace(/_/g, " ")}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                    {previewResult.observations && (
+                      <p className="font-sans text-sm leading-relaxed text-ink-soft">
+                        {previewResult.observations}
+                      </p>
+                    )}
+                  </div>
+                  <div className="mt-6 rounded-2xl border border-moss/30 bg-moss/5 p-5">
+                    <div className="flex items-center gap-3">
+                      <Lock className="h-5 w-5 text-moss" aria-hidden="true" />
+                      <p className="font-sans text-sm font-semibold text-ink">
+                        Unlock your full report
+                      </p>
+                    </div>
+                    <p className="mt-2 font-sans text-sm text-ink-soft">
+                      Get your detailed zone-by-zone analysis, personalised routine, and product recommendations for just <span className="font-semibold text-rose-deep">KES 30</span>.
+                    </p>
+                    <div className="mt-4 flex flex-wrap gap-3">
+                      <button
+                        type="button"
+                        onClick={() => setPhase("paying")}
+                        className="inline-flex items-center gap-2 rounded-full bg-moss px-7 py-3 font-sans text-sm font-semibold text-blush shadow-lg shadow-moss/20 transition hover:-translate-y-0.5 hover:bg-moss-light"
+                      >
+                        <CreditCard className="h-4 w-4" aria-hidden="true" />
+                        Unlock full report
+                      </button>
+                      <button
+                        type="button"
+                        onClick={reset}
+                        className="inline-flex items-center gap-2 rounded-full border border-rose px-7 py-3 font-sans text-sm font-semibold text-rose-deep transition hover:bg-rose hover:text-blush"
+                      >
+                        <RefreshCw className="h-4 w-4" aria-hidden="true" />
+                        Scan another photo
+                      </button>
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
           ) : null}
         </div>
@@ -848,6 +1011,86 @@ export default function SkinScan() {
           </p>
         </div>
       </div>
+
+      {/* ---------- Email / Payment modal ---------- */}
+      {(phase === "paying" || phase === "verifying") && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-ink/50 p-4" role="dialog" aria-modal="true" aria-label="Complete payment">
+          <div className="w-full max-w-sm rounded-3xl bg-white p-6 shadow-2xl">
+            {phase === "verifying" ? (
+              <div className="text-center">
+                <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-moss/10">
+                  <Loader2 className="h-6 w-6 animate-spin text-moss" aria-hidden="true" />
+                </span>
+                <p className="mt-4 font-display text-xl text-ink">Processing payment</p>
+                <p className="mt-2 font-sans text-sm text-ink-soft">
+                  Please complete the payment in the popup window...
+                </p>
+              </div>
+            ) : (
+              <>
+                <div className="text-center">
+                  <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-moss/10">
+                    <CreditCard className="h-6 w-6 text-moss" aria-hidden="true" />
+                  </span>
+                  <p className="mt-4 font-display text-xl text-ink">Unlock full report</p>
+                  <p className="mt-2 font-sans text-sm text-ink-soft">
+                    Enter your email to pay <span className="font-semibold text-rose-deep">KES 30</span> via Paystack.
+                  </p>
+                </div>
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    startPayment();
+                  }}
+                  className="mt-6"
+                >
+                  <label className="block">
+                    <span className="font-sans text-sm font-medium text-ink">Email address</span>
+                    <div className="mt-1.5 flex items-center gap-2 rounded-full border border-rose-light/40 bg-blush-deep px-4 py-2.5 transition focus-within:border-moss">
+                      <Mail className="h-4 w-4 text-ink-soft" aria-hidden="true" />
+                      <input
+                        type="email"
+                        required
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="you@example.com"
+                        className="w-full bg-transparent font-sans text-sm text-ink outline-none placeholder:text-ink-soft/50"
+                      />
+                    </div>
+                  </label>
+                  {payError && (
+                    <p className="mt-3 font-sans text-sm text-rose-deep">{payError}</p>
+                  )}
+                  <div className="mt-5 flex gap-3">
+                    <button
+                      type="submit"
+                      disabled={payLoading || !email}
+                      className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-moss px-6 py-3 font-sans text-sm font-semibold text-blush transition hover:-translate-y-0.5 hover:bg-moss-light disabled:opacity-50"
+                    >
+                      {payLoading ? (
+                        <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
+                      ) : (
+                        <CreditCard className="h-4 w-4" aria-hidden="true" />
+                      )}
+                      Pay now
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setPhase("preview");
+                        setPayError(null);
+                      }}
+                      className="rounded-full border border-rose px-6 py-3 font-sans text-sm font-semibold text-rose-deep transition hover:bg-rose hover:text-blush"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </form>
+              </>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
