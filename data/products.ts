@@ -782,6 +782,548 @@ export const products: Product[] = [
       "Natural Turmeric Extract, Ginseng Root Extract, Premium Botanical Oils, Essential Minerals, and Vitamin E.",
     skinTypes: "Suitable for All Skin Types",
   },
+  {
+    slug: "arabi-coffee-shea-sugar-scrub",
+    name: "Marie’s Arabi Coffee Shea Sugar Scrub",
+    tagline: "Glow Naturally - Smooth, Bright, Soft Skin",
+    category: "Body Care",
+    price: "KES 2,000",
+    compareAtPrice: "KES 2,500",
+    image: "/products/arabi-coffee-shea-sugar-scrub-1.jpeg",
+    images: [
+      "/products/arabi-coffee-shea-sugar-scrub-1.jpeg",
+      // "/products/arabi-coffee-shea-sugar-scrub-2.jpeg",
+    ],
+    short:
+      "A rich, exfoliating body scrub made with shea butter and coffee extracts to buff away dead skin cells and reveal smooth, bright, soft skin.",
+    benefits: [
+      "Gently exfoliates with natural sugar crystals and coffee",
+      "Deeply moisturizes and softens with rich shea butter",
+      "Promotes a bright, smooth, and natural glow",
+    ],
+    howToUse: [
+      {
+        title: "Application",
+        detail:
+          "Scoop a generous amount onto damp skin and massage gently in circular motions.",
+      },
+      {
+        title: "Rinse",
+        detail:
+          "Rinse off thoroughly with warm water and pat dry to lock in moisture.",
+      },
+    ],
+    ingredients:
+      "Shea Butter, Arabica Coffee Extracts, Natural Cane Sugar, Botanical Oils.",
+    skinTypes: "For all skin types",
+  },
+  {
+    slug: "coco-colada-shea-sugar-scrub",
+    name: "Marie’s Coco Colada Shea Sugar Scrub",
+    tagline: "For Hydrated, Youthful-Looking Skin",
+    category: "Body Care",
+    price: "KES 2,000",
+    compareAtPrice: "KES 2,500",
+    image: "/products/coco-colada-shea-sugar-scrub-1.jpeg",
+    images: [
+      "/products/coco-colada-shea-sugar-scrub-1.jpeg",
+      // "/products/coco-colada-shea-sugar-scrub-2.jpeg",
+    ],
+    short:
+      "A tropical exfoliating body scrub made with shea butter and coconut to gently buff away dead skin cells for hydrated, youthful-looking skin.",
+    benefits: [
+      "Gently exfoliates with natural sugar crystals",
+      "Deeply hydrates and nourishes with shea butter and coconut",
+      "Promotes smooth, soft, youthful-looking skin",
+    ],
+    howToUse: [
+      {
+        title: "Application",
+        detail:
+          "Scoop a generous amount onto damp skin and massage gently in circular motions.",
+      },
+      {
+        title: "Rinse",
+        detail:
+          "Rinse off thoroughly with warm water and pat dry to lock in moisture.",
+      },
+    ],
+    ingredients:
+      "Shea Butter, Coconut Oil & Extract, Natural Cane Sugar, Botanical Oils.",
+    skinTypes: "For all skin types",
+  },
+  {
+    slug: "moroccan-rose-shea-sugar-scrub",
+    name: "Marie’s Moroccan Rose Shea Sugar Scrub",
+    tagline: "Glow Naturally - Smooth, Bright, Soft Skin",
+    category: "Body Care",
+    price: "KES 2,000",
+    compareAtPrice: "KES 2,500",
+    image: "/products/moroccan-rose-shea-sugar-scrub-1.jpeg",
+    images: [
+      "/products/moroccan-rose-shea-sugar-scrub-1.jpeg",
+      // "/products/moroccan-rose-shea-sugar-scrub-2.jpeg",
+    ],
+    short:
+      "A luxurious exfoliating body scrub made with shea butter, pineapple, and papaya extracts to buff away dull skin and leave you with a smooth, bright, soft glow.",
+    benefits: [
+      "Gently exfoliates with natural sugar crystals and fruit enzymes",
+      "Deeply moisturizes and softens with rich shea butter",
+      "Promotes smooth, bright, and naturally glowing skin",
+    ],
+    howToUse: [
+      {
+        title: "Application",
+        detail:
+          "Scoop a generous amount onto damp skin and massage gently in circular motions.",
+      },
+      {
+        title: "Rinse",
+        detail:
+          "Rinse off thoroughly with warm water and pat dry to lock in moisture.",
+      },
+    ],
+    ingredients:
+      "Shea Butter, Moroccan Rose Extract, Pineapple Extract, Papaya Extract, Natural Cane Sugar, Botanical Oils.",
+    skinTypes: "For all skin types",
+  },
+  {
+    slug: "blue-lagoon-shea-sugar-scrub",
+    name: "Marie’s Blue Lagoon Shea Sugar Scrub",
+    tagline: "Glow Naturally - Smooth, Bright, Soft Skin",
+    category: "Body Care",
+    price: "KES 2,000",
+    compareAtPrice: "KES 2,500",
+    image: "/products/blue-lagoon-shea-sugar-scrub-1.jpeg",
+    images: [
+      "/products/blue-lagoon-shea-sugar-scrub-1.jpeg",
+      // "/products/blue-lagoon-shea-sugar-scrub-2.jpeg",
+    ],
+    short:
+      "A refreshing exfoliating body scrub made with shea butter, red algae, and Dead Sea minerals to polish away dullness and leave skin smooth, bright, and soft.",
+    benefits: [
+      "Gently exfoliates with natural sugar crystals and Dead Sea minerals",
+      "Deeply nourishes and hydrates with shea butter and red algae",
+      "Promotes smooth, bright, and soft skin",
+    ],
+    howToUse: [
+      {
+        title: "Application",
+        detail:
+          "Scoop a generous amount onto damp skin and massage gently in circular motions.",
+      },
+      {
+        title: "Rinse",
+        detail:
+          "Rinse off thoroughly with warm water and pat dry to lock in moisture.",
+      },
+    ],
+    ingredients:
+      "Shea Butter, Red Algae Extract, Dead Sea Minerals, Natural Cane Sugar, Botanical Oils.",
+    skinTypes: "For all skin types",
+  },
+  {
+    slug: "pineapple-shea-sugar-scrub",
+    name: "Marie’s Pineapple Shea Sugar Scrub",
+    tagline: "Glow Naturally - Smooth, Bright, Soft Skin",
+    category: "Body Care",
+    price: "KES 2,000",
+    compareAtPrice: "KES 2,500",
+    image: "/products/pineapple-shea-sugar-scrub-1.jpeg",
+    images: [
+      "/products/pineapple-shea-sugar-scrub-1.jpeg",
+      // "/products/pineapple-shea-sugar-scrub-2.jpeg",
+    ],
+    short:
+      "A revitalizing exfoliating body scrub made with shea butter, pineapple, and vegan collagen to gently polish skin and promote a smooth, bright, soft glow.",
+    benefits: [
+      "Gently exfoliates with natural sugar crystals and pineapple enzymes",
+      "Deeply nourishes and firms with shea butter and vegan collagen",
+      "Promotes smooth, bright, and soft skin",
+    ],
+    howToUse: [
+      {
+        title: "Application",
+        detail:
+          "Scoop a generous amount onto damp skin and massage gently in circular motions.",
+      },
+      {
+        title: "Rinse",
+        detail:
+          "Rinse off thoroughly with warm water and pat dry to lock in moisture.",
+      },
+    ],
+    ingredients:
+      "Shea Butter, Pineapple Extract, Vegan Collagen, Natural Cane Sugar, Botanical Oils.",
+    skinTypes: "For all skin types",
+  },
+  {
+    slug: "alpha-arbutin-shea-sugar-scrub",
+    name: "Marie’s Alpha Arbutin Shea Sugar Scrub",
+    tagline: "Glow Naturally - Smooth, Bright, Soft Skin",
+    category: "Body Care",
+    price: "KES 2,000",
+    compareAtPrice: "KES 2,500",
+    image: "/products/alpha-arbutin-shea-sugar-scrub-1.jpeg",
+    images: [
+      "/products/alpha-arbutin-shea-sugar-scrub-1.jpeg",
+      // "/products/alpha-arbutin-shea-sugar-scrub-2.jpeg",
+    ],
+    short:
+      "A brightening exfoliating body scrub made with shea butter and alpha arbutin to buff away dullness, even skin tone, and reveal smooth, bright, soft skin.",
+    benefits: [
+      "Gently exfoliates with natural sugar crystals to smooth skin texture",
+      "Helps brighten dull areas and promote an even skin tone with alpha arbutin",
+      "Deeply moisturizes and softens with rich shea butter",
+    ],
+    howToUse: [
+      {
+        title: "Application",
+        detail:
+          "Scoop a generous amount onto damp skin and massage gently in circular motions.",
+      },
+      {
+        title: "Rinse",
+        detail:
+          "Rinse off thoroughly with warm water and pat dry to lock in moisture.",
+      },
+    ],
+    ingredients:
+      "Shea Butter, Alpha Arbutin, Natural Cane Sugar, Botanical Oils.",
+    skinTypes: "For all skin types",
+  },
+  {
+    slug: "vitamin-c-shea-sugar-scrub",
+    name: "Marie’s Vitamin C Shea Sugar Scrub",
+    tagline:
+      "Reveals Brighter-Looking Skin • Glow Naturally • Smooth, Bright, Soft Skin",
+    category: "Body Care",
+    price: "KES 2,000",
+    compareAtPrice: "KES 2,500",
+    image: "/products/vitamin-c-shea-sugar-scrub-1.jpeg",
+    images: [
+      "/products/vitamin-c-shea-sugar-scrub-1.jpeg",
+      // "/products/vitamin-c-shea-sugar-scrub-2.jpeg",
+    ],
+    short:
+      "A revitalizing exfoliating body scrub made with shea butter, Vitamin C, and Alpha Hydroxy Acid to buff away dullness and reveal brighter-looking, smooth, soft skin.",
+    benefits: [
+      "Gently exfoliates with natural sugar crystals and Alpha Hydroxy Acid (AHA)",
+      "Reveals brighter-looking, radiant skin with Vitamin C",
+      "Deeply moisturizes and softens with rich shea butter",
+    ],
+    howToUse: [
+      {
+        title: "Application",
+        detail:
+          "Scoop a generous amount onto damp skin and massage gently in circular motions.",
+      },
+      {
+        title: "Rinse",
+        detail:
+          "Rinse off thoroughly with warm water and pat dry to lock in moisture.",
+      },
+    ],
+    ingredients:
+      "Shea Butter, Vitamin C, Alpha Hydroxy Acid (AHA), Natural Cane Sugar, Botanical Oils.",
+    skinTypes: "For all skin types",
+  },
+  {
+    slug: "sadoer-sakura-essence-eye-mask",
+    name: "Sadoer Sakura Essence Eye Mask",
+    tagline: "Make The Eyes More Delicate And Charming",
+    category: "Skin Care",
+    price: "KES 350",
+    compareAtPrice: "KES 500",
+    image: "/products/sadoer-sakura-essence-eye-mask-1.jpeg",
+    images: [
+      "/products/sadoer-sakura-essence-eye-mask-1.jpeg",
+      // "/products/sadoer-sakura-essence-eye-mask-2.jpeg",
+    ],
+    short:
+      "A gentle hydrating under-eye treatment from the Sadoer Eye Care Series infused with Sakura essence to nourish, brighten dark circles, and smooth delicate eye texture.",
+    benefits: [
+      "Nourishes and deeply moisturizes the delicate under-eye area",
+      "Helps fade the appearance of dark circles",
+      "Smooths fine lines and improves eye skin texture",
+    ],
+    howToUse: [
+      { title: "Cleanse", detail: "Thoroughly wash and pat dry your face." },
+      {
+        title: "Apply",
+        detail:
+          "Place one gel patch gently beneath each eye and smooth out air bubbles.",
+      },
+      {
+        title: "Rest",
+        detail:
+          "Leave on for 15 to 20 minutes, then remove and lightly pat any remaining essence into the skin.",
+      },
+    ],
+    ingredients:
+      "Sakura Flower Extract (Prunus Lannesiana), Hyaluronic Acid, Glycerin, Hydrating Botanical Essence.",
+    skinTypes: "For all skin types",
+  },
+  {
+    slug: "sadoer-blueberry-eye-mask",
+    name: "Sadoer Blueberry Smooth And Moisturizing Eye Mask",
+    tagline: "Refreshing and Not Greasy • Soft and Skin-Friendly",
+    category: "Skin Care",
+    price: "KES 350",
+    compareAtPrice: "KES 500",
+    image: "/products/sadoer-blueberry-eye-mask-1.jpeg",
+    images: [
+      "/products/sadoer-blueberry-eye-mask-1.jpeg",
+      // "/products/sadoer-blueberry-eye-mask-2.jpeg",
+    ],
+    short:
+      "A refreshing, non-greasy under-eye gel mask infused with antioxidant-rich blueberry extract to soften, hydrate, and nourish the delicate eye area.",
+    benefits: [
+      "Refreshing and non-greasy hydration",
+      "Soft and skin-friendly gel texture",
+      "Deeply nourishes and smooths the eye area",
+    ],
+    howToUse: [
+      { title: "Cleanse", detail: "Thoroughly wash and pat dry your face." },
+      {
+        title: "Apply",
+        detail:
+          "Place one gel patch gently beneath each eye and smooth out air bubbles.",
+      },
+      {
+        title: "Rest",
+        detail:
+          "Leave on for 15 to 20 minutes, then remove and lightly pat any remaining essence into the skin.",
+      },
+    ],
+    ingredients:
+      "Blueberry Fruit Extract (Vaccinium Angustifolium), Hyaluronic Acid, Glycerin, Hydrating Botanical Essence.",
+    skinTypes: "For all skin types",
+  },
+  {
+    slug: "sadoer-hyaluronic-acid-eye-mask",
+    name: "Sadoer Hyaluronic Acid Hydration Eye Mask",
+    tagline: "Make The Eyes More Delicate And Charming",
+    category: "Skin Care",
+    price: "KES 350",
+    compareAtPrice: "KES 500",
+    image: "/products/sadoer-hyaluronic-acid-eye-mask-1.jpeg",
+    images: [
+      "/products/sadoer-hyaluronic-acid-eye-mask-1.jpeg",
+      // "/products/sadoer-hyaluronic-acid-eye-mask-2.jpeg",
+    ],
+    short:
+      "A deeply hydrating under-eye treatment from the Sadoer Eye Care Series powered by hyaluronic acid to replenish moisture, fade dark circles, and smooth delicate eye texture.",
+    benefits: [
+      "Nourishes and deeply moisturizes the under-eye area",
+      "Helps fade the appearance of dark circles",
+      "Smooths fine lines and improves eye skin texture",
+    ],
+    howToUse: [
+      { title: "Cleanse", detail: "Thoroughly wash and pat dry your face." },
+      {
+        title: "Apply",
+        detail:
+          "Place one gel patch gently beneath each eye and smooth out air bubbles.",
+      },
+      {
+        title: "Rest",
+        detail:
+          "Leave on for 15 to 20 minutes, then remove and lightly pat any remaining essence into the skin.",
+      },
+    ],
+    ingredients:
+      "Hyaluronic Acid (Sodium Hyaluronate), Glycerin, Hydrating Botanical Essence.",
+    skinTypes: "For all skin types",
+  },
+  {
+    slug: "sadoer-caviar-essence-eye-mask",
+    name: "Sadoer Caviar Essence Eye Mask",
+    tagline: "Make The Eyes More Delicate And Charming",
+    category: "Skin Care",
+    price: "KES 350",
+    compareAtPrice: "KES 500",
+    image: "/products/sadoer-caviar-essence-eye-mask-1.jpeg",
+    images: [
+      "/products/sadoer-caviar-essence-eye-mask-1.jpeg",
+      // "/products/sadoer-caviar-essence-eye-mask-2.jpeg",
+    ],
+    short:
+      "A revitalizing under-eye treatment from the Sadoer Eye Care Series enriched with caviar essence to deeply nourish, fade dark circles, and smooth delicate eye texture.",
+    benefits: [
+      "Nourishes and deeply moisturizes the under-eye area",
+      "Helps fade the appearance of dark circles",
+      "Smooths fine lines and improves eye skin texture",
+    ],
+    howToUse: [
+      { title: "Cleanse", detail: "Thoroughly wash and pat dry your face." },
+      {
+        title: "Apply",
+        detail:
+          "Place one gel patch gently beneath each eye and smooth out air bubbles.",
+      },
+      {
+        title: "Rest",
+        detail:
+          "Leave on for 15 to 20 minutes, then remove and lightly pat any remaining essence into the skin.",
+      },
+    ],
+    ingredients:
+      "Caviar Extract, Hyaluronic Acid, Glycerin, Hydrating Botanical Essence.",
+    skinTypes: "For all skin types",
+  },
+  {
+    slug: "sadoer-pearl-rejuvenating-eye-mask",
+    name: "Sadoer Pearl Rejuvenating Soft Eye Mask",
+    tagline: "Refreshing and Not Greasy • Soft and Skin-Friendly",
+    category: "Skin Care",
+    price: "KES 350",
+    compareAtPrice: "KES 500",
+    image: "/products/sadoer-pearl-rejuvenating-eye-mask-1.jpeg",
+    images: [
+      "/products/sadoer-pearl-rejuvenating-eye-mask-1.jpeg",
+      // "/products/sadoer-pearl-rejuvenating-eye-mask-2.jpeg",
+    ],
+    short:
+      "A refreshing, non-greasy under-eye gel mask enriched with pearl extract to brighten, soften, and deeply nourish the delicate eye area.",
+    benefits: [
+      "Refreshing and non-greasy hydration",
+      "Soft and skin-friendly gel texture",
+      "Deeply nourishes and rejuvenates the eye area",
+    ],
+    howToUse: [
+      { title: "Cleanse", detail: "Thoroughly wash and pat dry your face." },
+      {
+        title: "Apply",
+        detail:
+          "Place one gel patch gently beneath each eye and smooth out air bubbles.",
+      },
+      {
+        title: "Rest",
+        detail:
+          "Leave on for 15 to 20 minutes, then remove and lightly pat any remaining essence into the skin.",
+      },
+    ],
+    ingredients:
+      "Pearl Extract (Hydrolyzed Pearl), Hyaluronic Acid, Glycerin, Hydrating Botanical Essence.",
+    skinTypes: "For all skin types",
+  },
+  {
+    slug: "sadoer-blueberry-hydration-lip-mask",
+    name: "Sadoer Blueberry Hydration Lip Mask",
+    tagline: "Lips Are More Delicate And Charming",
+    category: "Lip Care",
+    price: "KES 350",
+    compareAtPrice: "KES 500",
+    image: "/products/sadoer-blueberry-hydration-lip-mask-1.jpeg",
+    images: [
+      "/products/sadoer-blueberry-hydration-lip-mask-1.jpeg",
+      // "/products/sadoer-blueberry-hydration-lip-mask-2.jpeg",
+    ],
+    short:
+      "A nourishing gel lip treatment from the Sadoer Fruit Series infused with blueberry extract to hydrate dry lips, soften lip lines, and brighten lip tone.",
+    benefits: [
+      "Nourishes and deeply moisturizes dry, chapped lips",
+      "Helps fade the appearance of fine lip lines",
+      "Brightens lip color for soft, smooth, charming lips",
+    ],
+    howToUse: [
+      {
+        title: "Cleanse",
+        detail: "Gently clean and pat your lips dry before application.",
+      },
+      {
+        title: "Apply",
+        detail:
+          "Place the gel lip patch smoothly over your lips and press gently to secure.",
+      },
+      {
+        title: "Rest",
+        detail:
+          "Leave on for 15 to 20 minutes, then remove and lightly massage any remaining essence into your lips.",
+      },
+    ],
+    ingredients:
+      "Blueberry Fruit Extract (Vaccinium Angustifolium), Collagen, Hyaluronic Acid, Glycerin, Hydrating Botanical Essence.",
+    skinTypes: "For all skin types",
+  },
+  {
+    slug: "bioaqua-honey-peach-hexapeptide-mask",
+    name: "Bioaqua Honey Peach Hexapeptide Mask",
+    tagline: "Hydrating & Nourishing • Soft, Smooth & Glowing Skin",
+    category: "Skin Care",
+    price: "KES 200",
+    compareAtPrice: "KES 300",
+    image: "/products/bioaqua-honey-peach-hexapeptide-mask-1.jpeg",
+    images: [
+      "/products/bioaqua-honey-peach-hexapeptide-mask-1.jpeg",
+      // "/products/bioaqua-honey-peach-hexapeptide-mask-2.jpeg",
+    ],
+    short:
+      "A deeply hydrating and nourishing sheet mask infused with honey peach extract and hexapeptides to firm, soften, and leave your skin smooth and glowing.",
+    benefits: [
+      "Deeply hydrates and replenishes dry skin",
+      "Nourishes and firms with hexapeptide technology",
+      "Leaves skin soft, smooth, and radiant",
+    ],
+    howToUse: [
+      {
+        title: "Cleanse",
+        detail: "Thoroughly wash and dry your face before use.",
+      },
+      {
+        title: "Apply",
+        detail:
+          "Unfold the mask and smooth it evenly across your facial contours.",
+      },
+      {
+        title: "Rest",
+        detail: "Leave on for 15 to 20 minutes to allow the essence to absorb.",
+      },
+      {
+        title: "Finish",
+        detail:
+          "Remove the mask and gently pat any remaining serum into the skin.",
+      },
+    ],
+    ingredients:
+      "Honey Peach Extract (Prunus Persica), Acetyl Hexapeptide-8, Honey Extract, Hyaluronic Acid, Glycerin.",
+    skinTypes: "For all skin types",
+  },
+  {
+    slug: "shimmering-body-butter",
+    name: "Marie’s Shimmering Body Butter",
+    tagline: "Glow Naturally - Smooth, Soft, Radiant Skin",
+    category: "Body Care",
+    price: "KES 2,599",
+    compareAtPrice: "KES 3,000",
+    image: "/products/shimmering-body-butter-1.jpeg",
+    images: [
+      "/products/shimmering-body-butter-1.jpeg",
+      // "/products/shimmering-body-butter-2.jpeg",
+    ],
+    short:
+      "A rich, deeply moisturizing shea body butter made with Vitamin E and natural glow oils to leave your skin smooth, soft, and luminous with a subtle shimmer.",
+    benefits: [
+      "Deeply moisturizes and softens dry skin with rich shea butter",
+      "Nourishes and protects the skin barrier with Vitamin E",
+      "Leaves a natural, luminous shimmer for smooth, radiant skin",
+    ],
+    howToUse: [
+      {
+        title: "Application",
+        detail: "Scoop a small amount and warm it between your palms.",
+      },
+      {
+        title: "Massage",
+        detail:
+          "Massage gently onto clean, slightly damp skin until absorbed, focusing on dry areas or wherever you want a subtle glow.",
+      },
+    ],
+    ingredients:
+      "Shea Butter, Vitamin E (Tocopherol), Natural Glow Oils, Mineral Shimmer Mica.",
+    skinTypes: "For all skin types",
+  },
 ];
 
 export function getProduct(slug: string) {
