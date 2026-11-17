@@ -1324,6 +1324,90 @@ export const products: Product[] = [
       "Shea Butter, Vitamin E (Tocopherol), Natural Glow Oils, Mineral Shimmer Mica.",
     skinTypes: "For all skin types",
   },
+  {
+    slug: "bioaqua-camellias-anti-oxidation-mask",
+    name: "Bioaqua Camellias Anti-Oxidation Hydrating Nourish Facial Mask",
+    tagline:
+      "Nourishing Emollient Antioxidant Hydrating • Gentle and Nourishing Ingredients of Camellia",
+    category: "Skin Care",
+    price: "KES 200",
+    compareAtPrice: "KES 300",
+    image: "/products/bioaqua-camellias-anti-oxidation-mask-1.jpeg",
+    images: [
+      "/products/bioaqua-camellias-anti-oxidation-mask-1.jpeg",
+      "/products/bioaqua-camellias-anti-oxidation-mask-2.jpeg",
+    ],
+    short:
+      "A gentle, antioxidant-rich sheet mask infused with nourishing camellia flower ingredients to deeply moisturize, rejuvenate, and keep skin radiant.",
+    benefits: [
+      "Antioxidant protection from gentle camellia ingredients",
+      "Deeply moisturizing and nourishing for dry skin",
+      "Rejuvenates, brightens, and keeps skin radiant",
+    ],
+    howToUse: [
+      {
+        title: "Cleanse",
+        detail: "Thoroughly wash and dry your face before use.",
+      },
+      {
+        title: "Apply",
+        detail:
+          "Unfold the mask and smooth it evenly across your facial contours.",
+      },
+      {
+        title: "Rest",
+        detail:
+          "Leave on for 15 to 20 minutes to allow the camellia essence to absorb.",
+      },
+      {
+        title: "Finish",
+        detail:
+          "Remove the mask and gently pat any remaining serum into the skin.",
+      },
+    ],
+    ingredients:
+      "Camellia Japonica Flower Extract, Hyaluronic Acid, Glycerin, Botanical Antioxidant Complex.",
+    skinTypes: "For all skin types",
+  },
+  {
+    slug: "white-bentonite-clay",
+    name: "Marie’s White Bentonite Clay",
+    tagline: "Glow Naturally • Clear, Smooth, Reset Skin",
+    category: "Skin Care",
+    price: "KES 1,500", // Kept consistent with your clay mask pricing, adjust as needed
+    compareAtPrice: "KES 1,800",
+    image: "/products/white-bentonite-clay-1.jpeg",
+    images: [
+      "/products/white-bentonite-clay-1.jpeg",
+      "/products/white-bentonite-clay-2.jpeg",
+    ],
+    short:
+      "A natural detox face and body clay mask made with pure white bentonite clay for deep cleansing, gentle purification, and reset, glowing skin.",
+    benefits: [
+      "Deeply cleanses and detoxifies pores on both face and body",
+      "Gently draws out excess oil and impurities without harshness",
+      "Leaves skin feeling clear, smooth, and naturally refreshed",
+    ],
+    howToUse: [
+      {
+        title: "Mix",
+        detail:
+          "Combine 1–2 teaspoons of clay powder with water or rose water in a non-metallic bowl until a smooth paste forms.",
+      },
+      {
+        title: "Apply",
+        detail:
+          "Spread an even layer onto clean skin on your face or body, avoiding the eye and lip areas.",
+      },
+      {
+        title: "Rinse",
+        detail:
+          "Leave on for 10 to 15 minutes until mostly dry, then rinse off thoroughly with warm water and pat dry.",
+      },
+    ],
+    ingredients: "100% Pure White Bentonite Clay.",
+    skinTypes: "For all skin types, including sensitive skin",
+  },
 ];
 
 export function getProduct(slug: string) {

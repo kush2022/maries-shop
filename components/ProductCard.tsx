@@ -1,12 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 import { Product } from "@/data/products";
 
 export default function ProductCard({ product }: { product: Product }) {
   return (
     <Link
       href={`/products/${product.slug}`}
-      className="group flex flex-col overflow-hidden rounded-3xl border border-rose-light/40 bg-white transition hover:-translate-y-1 hover:shadow-lg hover:shadow-rose-light/30"
+      className="group flex h-full flex-col overflow-hidden rounded-3xl border border-rose-light/40 bg-white transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-rose-light/30 motion-reduce:transform-none"
     >
       <div className="relative aspect-square w-full overflow-hidden bg-blush-deep">
         <Image
@@ -14,8 +15,9 @@ export default function ProductCard({ product }: { product: Product }) {
           alt={product.name}
           fill
           sizes="(max-width: 640px) 100vw, 33vw"
-          className="object-cover transition duration-500 group-hover:scale-105"
+          className="object-cover transition-[transform,filter] duration-700 ease-out group-hover:scale-[1.06] group-hover:saturate-[1.04] motion-reduce:transform-none"
         />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/25 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
         {product.badge && (
           <span className="absolute top-3 left-3 rounded-full bg-moss px-3 py-1 font-sans text-xs font-semibold text-blush">
             {product.badge}
@@ -39,8 +41,12 @@ export default function ProductCard({ product }: { product: Product }) {
               {product.price}
             </span>
           </span>
-          <span className="font-sans text-sm font-medium text-ink underline decoration-rose-light underline-offset-4 group-hover:text-rose-deep">
+          <span className="flex items-center gap-1 font-sans text-sm font-medium text-ink underline decoration-rose-light underline-offset-4 transition-colors duration-200 group-hover:text-rose-deep">
             View details
+            <ArrowUpRight
+              className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 motion-reduce:transform-none"
+              aria-hidden="true"
+            />
           </span>
         </div>
       </div>

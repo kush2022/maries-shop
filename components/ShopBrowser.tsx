@@ -1,6 +1,12 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import {
+  AnimatePresence,
+  cubicBezier,
+  motion,
+  useReducedMotion,
+} from "framer-motion";
 import { Search, X } from "lucide-react";
 import { products } from "@/data/products";
 import ProductCard from "./ProductCard";
@@ -18,6 +24,8 @@ const sorts = [
   { value: "price-desc", label: "Price: high to low" },
 ];
 
+const EASE = cubicBezier(0.22, 1, 0.36, 1);
+
 function priceNumber(price: string) {
   return parseFloat(price.replace(/[^0-9.]/g, "")) || 0;
 }
@@ -26,6 +34,28 @@ export default function ShopBrowser() {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("All");
   const [sort, setSort] = useState("featured");
+  const shouldReduceMotion = useReducedMotion();
+
+  const entranceTransition = shouldReduceMotion
+    ? { duration: 0 }
+    : { duration: 0.6, ease: EASE };
+  const controlsTransition = shouldReduceMotion
+    ? { duration: 0 }
+    : { duration: 0.6, delay: 0.08, ease: EASE };
+  const cardVariants = {
+    hidden: { opacity: 0, y: 18 },
+    visible: (index: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: shouldReduceMotion
+        ? { duration: 0 }
+        : {
+            duration: 0.45,
+            delay: Math.min(index, 6) * 0.045,
+            ease: EASE,
+          },
+    }),
+  };
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -50,7 +80,12 @@ export default function ShopBrowser() {
 
   return (
     <section>
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+      <motion.div
+        initial={shouldReduceMotion ? false : { opacity: 0, y: 18 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={entranceTransition}
+        className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"
+      >
         <div>
           <p className="font-sans text-xs font-semibold tracking-[0.3em] text-moss uppercase">
             The line
@@ -63,12 +98,17 @@ export default function ShopBrowser() {
             botanical skincare.
           </p>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="mt-10 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-        <div className="relative w-full max-w-sm">
+      <motion.div
+        initial={shouldReduceMotion ? false : { opacity: 0, y: 14 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={controlsTransition}
+        className="mt-10 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between"
+      >
+        <div className="group relative w-full max-w-sm">
           <Search
-            className="pointer-events-none absolute top-1/2 left-4 h-4 w-4 -translate-y-1/2 text-ink-soft"
+            className="pointer-events-none absolute top-1/2 left-4 h-4 w-4 -translate-y-1/2 text-ink-soft transition duration-300 group-focus-within:scale-110 group-focus-within:text-rose-deep motion-reduce:transform-none"
             aria-hidden="true"
           />
           <input
@@ -77,14 +117,14 @@ export default function ShopBrowser() {
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search products…"
             aria-label="Search products"
-            className="w-full rounded-full border border-rose-light/40 bg-white py-2.5 pr-10 pl-11 font-sans text-sm text-ink placeholder:text-ink-soft/70 focus:border-rose focus:outline-none focus:ring-2 focus:ring-rose/20"
+            className="w-full rounded-full border border-rose-light/40 bg-white py-2.5 pr-10 pl-11 font-sans text-sm text-ink transition-[border-color,box-shadow] duration-200 placeholder:text-ink-soft/70 focus:border-rose focus:outline-none focus:ring-2 focus:ring-rose/20"
           />
           {query && (
             <button
               type="button"
               onClick={() => setQuery("")}
               aria-label="Clear search"
-              className="absolute top-1/2 right-3 -translate-y-1/2 rounded-full p-1 text-ink-soft transition hover:bg-blush-deep hover:text-rose-deep"
+              className="absolute top-1/2 right-3 -translate-y-1/2 rounded-full p-1 text-ink-soft transition duration-200 hover:bg-blush-deep hover:text-rose-deep active:scale-90 motion-reduce:transform-none"
             >
               <X className="h-4 w-4" />
             </button>
@@ -103,13 +143,25 @@ export default function ShopBrowser() {
                 type="button"
                 onClick={() => setCategory(c)}
                 aria-pressed={category === c}
-                className={`rounded-full px-4 py-2 font-sans text-sm font-medium transition ${
+                className={`relative rounded-full border px-4 py-2 font-sans text-sm font-medium transition-[color,border-color,background-color,transform] duration-200 active:scale-[0.97] motion-reduce:transform-none ${
                   category === c
-                    ? "bg-rose-deep text-blush"
-                    : "border border-rose-light/40 bg-white text-ink hover:border-rose hover:text-rose-deep"
+                    ? "border-rose-deep text-blush"
+                    : "border-rose-light/40 bg-white text-ink hover:border-rose hover:text-rose-deep"
                 }`}
               >
-                {c}
+                {category === c && (
+                  <motion.span
+                    aria-hidden="true"
+                    layoutId="shop-category-pill"
+                    className="absolute inset-0 rounded-full bg-rose-deep"
+                    transition={
+                      shouldReduceMotion
+                        ? { duration: 0 }
+                        : { duration: 0.28, ease: EASE }
+                    }
+                  />
+                )}
+                <span className="relative z-10">{c}</span>
               </button>
             ))}
           </div>
@@ -118,7 +170,7 @@ export default function ShopBrowser() {
             value={sort}
             onChange={(e) => setSort(e.target.value)}
             aria-label="Sort products"
-            className="rounded-full border border-rose-light/40 bg-white px-4 py-2 font-sans text-sm text-ink focus:border-rose focus:outline-none focus:ring-2 focus:ring-rose/20"
+            className="cursor-pointer rounded-full border border-rose-light/40 bg-white px-4 py-2 font-sans text-sm text-ink transition-[border-color,box-shadow] duration-200 focus:border-rose focus:outline-none focus:ring-2 focus:ring-rose/20"
           >
             {sorts.map((s) => (
               <option key={s.value} value={s.value}>
@@ -127,37 +179,94 @@ export default function ShopBrowser() {
             ))}
           </select>
         </div>
-      </div>
+      </motion.div>
 
-      <p className="mt-6 font-sans text-sm text-ink-soft" role="status">
-        Showing {filtered.length} of {products.length} products
-        {category !== "All" && ` in ${category}`}
+      <p className="mt-6 font-sans text-sm text-ink-soft" role="status" aria-live="polite">
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.span
+            key={`${filtered.length}-${category}-${sort}`}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 4 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -4 }}
+            transition={
+              shouldReduceMotion
+                ? { duration: 0 }
+                : { duration: 0.18, ease: EASE }
+            }
+            className="inline-block"
+          >
+            Showing {filtered.length} of {products.length} products
+            {category !== "All" && ` in ${category}`}
+          </motion.span>
+        </AnimatePresence>
       </p>
 
-      {filtered.length > 0 ? (
-        <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((product) => (
-            <ProductCard key={product.slug} product={product} />
-          ))}
-        </div>
-      ) : (
-        <div className="mt-6 rounded-3xl border border-rose-light/40 bg-white px-8 py-16 text-center">
-          <p className="font-display text-2xl text-ink">No products found</p>
-          <p className="mt-2 font-sans text-sm text-ink-soft">
-            Nothing matches your search. Try a different keyword or category.
-          </p>
-          <button
-            type="button"
-            onClick={() => {
-              setQuery("");
-              setCategory("All");
+      <AnimatePresence mode="wait">
+        {filtered.length > 0 ? (
+          <motion.div
+            key="products"
+            layout
+            initial={shouldReduceMotion ? false : { opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{
+              opacity: 0,
+              y: -8,
+              transition: shouldReduceMotion
+                ? { duration: 0 }
+                : { duration: 0.2, ease: EASE },
             }}
-            className="mt-6 rounded-full bg-ink px-6 py-3 font-sans text-sm font-semibold text-blush transition hover:bg-rose-deep"
+            transition={entranceTransition}
+            className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
           >
-            Clear filters
-          </button>
-        </div>
-      )}
+            <AnimatePresence mode="popLayout">
+              {filtered.map((product, index) => (
+                <motion.div
+                  key={product.slug}
+                  layout="position"
+                  custom={index}
+                  variants={cardVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit={{
+                    opacity: 0,
+                    scale: 0.98,
+                    transition: shouldReduceMotion
+                      ? { duration: 0 }
+                      : { duration: 0.2, ease: EASE },
+                  }}
+                  className="h-full"
+                >
+                  <ProductCard product={product} />
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
+        ) : (
+          <motion.div
+            key="empty"
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={entranceTransition}
+            className="mt-6 rounded-3xl border border-rose-light/40 bg-white px-8 py-16 text-center"
+          >
+            <p className="font-display text-2xl text-ink">No products found</p>
+            <p className="mt-2 font-sans text-sm text-ink-soft">
+              Nothing matches your search. Try a different keyword or category.
+            </p>
+            <button
+              type="button"
+              onClick={() => {
+                setQuery("");
+                setCategory("All");
+              }}
+              className="mt-6 rounded-full bg-ink px-6 py-3 font-sans text-sm font-semibold text-blush transition duration-200 hover:bg-rose-deep active:scale-[0.97] motion-reduce:transform-none"
+            >
+              Clear filters
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
